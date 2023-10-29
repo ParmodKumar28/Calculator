@@ -71,5 +71,6 @@ html,body{
         max-width: 22rem;
         top: 60px;
         left: 35px;
+        position: absolute;
     }
 }
