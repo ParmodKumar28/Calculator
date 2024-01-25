@@ -75,7 +75,7 @@ html, body {
 
 .operation {
     background: #ff9500; /* Yellow-Dark color for operator buttons */
-    color: #1e1e1e; /* Dark text for operator buttons */
+    color: #ffffff; /* Dark text for operator buttons */
 }
 
 /* Styling for AC, +/-, and % buttons */
