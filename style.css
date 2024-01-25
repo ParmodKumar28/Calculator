@@ -1,42 +1,42 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
-html,body{
+html, body {
     width: 100%;
     height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Pseudo Classes */
-::selection{
-    display: none;
-}
-/*  */
-
-/*  */
-#calculator{
+#calculator {
     height: 500px;
     width: 380px;
     padding: 2px;
-    border: 2px solid black;
+    border: 2px solid #d0d0d0;
     position: absolute;
-    top: 100px;
-    left: 200px;
-    background: linear-gradient(120deg, rgb(0, 0, 255,0.5), rgb(255, 0, 0,0.5));
-    box-shadow: 0px 0px 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:  #1e1e1e; /* Blackish background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    user-select: none;
 }
 
-#display-container{
+#display-container {
     height: 80px;
-    border: 2px solid black;
+    border: 2px solid #d0d0d0;
     margin: 2px;
-    background: rgb(255, 255, 255);
+    background: #f4f4f4;
     position: relative;
+    color: #333;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
-#display{
+#display {
     font-size: 2rem;
     position: absolute;
     bottom: 0;
@@ -45,32 +45,50 @@ html,body{
     padding: 2px;
 }
 
-.button{
+.button {
     display: inline-block;
     margin: 6px;
     width: 20%;
     height: 12%;
     color: white;
+    background-color: #333333;
     font-size: 1.2rem;
-    font-weight:700;
+    font-weight: 700;
     text-align: center;
     line-height: 3.2rem;
-    border: 2px solid black;
-    box-shadow: 0px 0px 2px black;
+    /* border: 2px solid #d0d0d0; */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
-.button:hover{
-    transition: all 0.2s ease-in-out;
-    background-color: rgb(0, 0, 255,0.6);
+.operation1{
+    background-color: #A5A5A5;
+    color: black;
 }
 
-@media screen and (max-Width:768px) {
-    #calculator{
-        height: 500px;
-        width: 88vw;
-        max-width: 22rem;
-        top: 60px;
-        left: 16px;
-        position: absolute;
-    }
+.button:hover,
+.button:active {
+    background-color: white; /* Change to white on hover/click */
+    color: #ff9500; /* Yellow text on hover/click */
+}
+
+.operation {
+    background: #ff9500; /* Yellow-Dark color for operator buttons */
+    color: #1e1e1e; /* Dark text for operator buttons */
+}
+
+/* Styling for AC, +/-, and % buttons */
+.button[data-value="AC"]:hover,
+.button[data-value="+/-"]:hover,
+.button[data-value="%"]:hover {
+    background-color: white; /* White background for AC, +/-, % buttons on hover */
+    color: #333333; /* Grey text for AC, +/-, % buttons on hover */
+    border-color: #808080; /* Grey border for AC, +/-, % buttons on hover */
+}
+
+/* Styling for the remaining buttons */
+.button:not(.operation):not([data-value="AC"]):not([data-value="+/-"]):not([data-value="%"]):hover {
+    background-color: white; /* Light greyish color for remaining buttons on hover */
+    color: black; /* White text for remaining buttons on hover */
 }
